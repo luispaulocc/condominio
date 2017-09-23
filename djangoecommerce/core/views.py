@@ -12,3 +12,18 @@ def index(request):
 	}
 
 	return render(request, 'index.html', context)
+
+def tables(request):
+	return render(request, 'tables.html')
+
+def register(request):
+	return render(request, 'register.html')
+
+def forms(request):
+	return render(request, 'forms.html')
+
+def login(request):
+	return render(request, 'login.html')
+
+def charts(request):
+	return render(request, 'charts.html')
