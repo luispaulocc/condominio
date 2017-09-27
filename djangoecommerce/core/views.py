@@ -13,6 +13,9 @@ def index(request):
 
 	return render(request, 'index.html', context)
 
+def perfil(request):
+	return render(request, 'perfil.html')
+
 def tables(request):
 	return render(request, 'tables.html')
 

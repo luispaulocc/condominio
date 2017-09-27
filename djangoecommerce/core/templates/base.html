@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>Condomínio Live</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -45,8 +45,8 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="{% url 'index' %}" class="navbar-brand">
-                  <div class="brand-text brand-big hidden-lg-down"><span>Bootstrap </span><strong>Dashboard</strong></div>
-                  <div class="brand-text brand-small"><strong>BD</strong></div></a>
+                  <div class="brand-text brand-big hidden-lg-down"><span>Condomínio </span><strong>Live</strong></div>
+                  <div class="brand-text brand-small"><strong>CD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <!-- Navbar Menu -->
@@ -112,27 +112,35 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="{% static 'img/avatar-1.jpg' %}" alt="..." class="img-fluid rounded-circle"></div>
+ <!--           <div class="avatar"><img src="{% static 'img/avatar-1.jpg' %}" alt="..." class="img-fluid rounded-circle"></div> -->
             <div class="title">
-              <h1 class="h4">Mark Stephen</h1>
-              <p>Web Designer</p>
+              <h1 class="h4">Pedra Branca</h1>
+              <p>Condomínio</p>
             </div>
           </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <!-- Sidebar Navidation Menus--> 
+ <!--         <span class="heading">Main</span> -->
           <ul class="list-unstyled">
-            <li class="active"> <a href="./"><i class="icon-home"></i>Home</a></li>
-            <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Dropdown </a>
+            <li class="active"> <a href="{% url 'index' %}"><i class="icon-home"></i>Início</a></li>
+            <li> <a href="{% url 'perfil' %}"> <i class="icon-user"></i>Perfil</a></li>
+            <li> <a href="#"> <i class="icon-bill"></i>Pagamentos</a></li>
+            <li> <a href="#"> <i class="icon-search"></i>Consultas</a></li>
+            <li> <a href="#"> <i class="icon-clock"></i>Notificações</a></li>
+            <li> <a href="#"> <i class="icon-presentation"></i>Enquetes</a></li>
+            <li> <a href="#"> <i class="icon-mail"></i>Mensagens</a></li>
+            <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-list-1"></i>Reservas</a>
               <ul id="dashvariants" class="collapse list-unstyled">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="#">Salão de Festa</a></li>
+                <li><a href="#">Sala de Reuniões</a></li>
+                <li><a href="#">Hall de entrada</a></li>
+                <li><a href="#">Garagem</a></li>
               </ul>
             </li>
+            <li> <a href="{% url 'login' %}"> <i class="icon-close"></i>Sair</a></li>
             <li> <a href="{% url 'tables' %}"> <i class="icon-grid"></i>Tables </a></li>
             <li> <a href="{% url 'charts' %}"> <i class="fa fa-bar-chart"></i>Charts </a></li>
             <li> <a href="{% url 'forms' %}"> <i class="icon-padnote"></i>Forms </a></li>
-            <li> <a href="{% url 'login' %}"> <i class="icon-interface-windows"></i>Login Page</a></li>
+            
           </ul><span class="heading">Extras</span>
           <ul class="list-unstyled">
             <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
@@ -147,17 +155,13 @@
     </div>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{% static 'js/tether.min.js' %}"></script>
-    
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    
-    <script src="{% static 'js/jquery.cookie.js' %}"></script>
-    
+    <script src="{% static 'js/tether.min.js' %}"></script>    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>   
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>    
     <script src="{% static 'js/jquery.validate.min.js' %}"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="{% static 'js/charts-home.js' %}"></script>
-  
+    <script src="{% static 'js/charts-custom.js' %}"></script>
     <script src="{% static 'js/front.js' %}"></script>
     
 	<!--
