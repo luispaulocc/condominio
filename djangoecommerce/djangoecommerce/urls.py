@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from coreAdmin.views import index
+from coreAdmin.views import plain
 
 urlpatterns = [
 	url(r'^$', index, name='index'),
-    url(r'^plain_page$', index, name='plain'),
+    url(r'^plain_page$', plain, name='plain'),
     url(r'^admin/', admin.site.urls),
 ]
