@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'coreAdmin',
+
+    'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
@@ -121,3 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+# auth
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
