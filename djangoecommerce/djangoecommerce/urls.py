@@ -20,13 +20,14 @@ from coreAdmin.views import index
 from coreAdmin.views import plain
 
 
-from django.contrib.auth.views import login
+from django.contrib.auth.views import login, logout
 
 
 urlpatterns = [
-    url(r'^$', index, name='index'),
-    url(r'^entrar$', login, {'template_name':'login.html'}, name='login'),
-    url(r'^plain_page$', plain, name='plain'),
+    url(r'^inicio/$', index, name='index'),
+    url(r'^$', login, {'template_name':'login.html'}, name='login'),
+    url(r'^$', logout, {'next_page':'login.html'}, name='logout'),
+    url(r'^plain_page/$', plain, name='plain'),
     url(r'^admin/', admin.site.urls),
 
 ]
