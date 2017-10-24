@@ -17,3 +17,8 @@ def login(request):
 
 def plain(request):
 	return render(request, 'plain_page.html')
+
+
+
+
+	
