@@ -8,7 +8,7 @@ from django.db import models
 
 class Condominio(models.Model):
 	name = models.CharField('Condominio', max_length=100)
-	slug = models.SlugField('Identificador', max_length=100)	
+
 
 	class Meta:
 		verbose_name = 'Condominio'
@@ -24,8 +24,6 @@ class Pessoa(models.Model):
 
 	name = models.CharField('Nome', max_length=100)
 	sobremone = models.CharField('sobrenome', max_length=100)
-	slug = models.SlugField('Identificador', max_length=100)
-	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')
 	created = models.DateTimeField('Criado em', auto_now_add=True)
 	modified = models.DateTimeField('Modificado em', auto_now_add=True)
 
@@ -41,7 +39,6 @@ class Pessoa(models.Model):
 class Morador(models.Model):
 	apartamento = models.CharField('Apartamento', max_length=20)
 	pessoa = models.ForeignKey('moradores.Pessoa', verbose_name='Pessoa')
-	slug = models.SlugField('Identificador', max_length=100)
 	created = models.DateTimeField('Criado em', auto_now_add=True)
 	modified = models.DateTimeField('Modificado em', auto_now_add=True)
 	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')

@@ -7,10 +7,10 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Contacts Design</h3>
+                <h3>Moradores</h3>
               </div>
 
-              <div class="title_right">
+              <div class="title_right"> </div>
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for...">
@@ -38,12 +38,6 @@
                             <div class="left col-xs-7">
                               <h2>{{morador.pessoa.name}} {{morador.pessoa.sobremone}}</h2>
 
-
-                              
-                                
-                                
-                              
-
                               <p><strong>About: </strong> Apartamento {{morador.apartamento}} </p>
                               <ul class="list-unstyled">
                                 <li><i class="fa fa-building"></i> Address: </li>
@@ -55,26 +49,22 @@
                             </div>
                           </div>
                           <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                              <p class="ratings">
-                                <a>4.0</a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                              </p>
-                            </div>
+                            
                            
                           </div>
                         </div>
                       </div>
-{% endfor %}
+                      {% endfor %}
+
+
                     </div>
+                  </div>
+                  <div class="col-md-4"> 
+                       <a href="{% url 'cadastrar_morador' %}"> <button type="button" class="btn btn-round btn-primary">Cadastrar Morador</button> </a>
                   </div>
                 </div>
               </div>
-            </div>
+            
           </div>
         </div>
         <!-- /page content -->

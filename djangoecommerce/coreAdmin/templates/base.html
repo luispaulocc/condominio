@@ -67,7 +67,7 @@
                   <li><a><i class="fa fa-edit"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{% url 'plain' %}">Pagina em Branco</a></li>
-                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="{% url 'cadastrar_morador' %}">Cadastrar moradores</a></li>
                       <li><a href="{% url 'moradores' %}">Moradores</a></li>
                       <li><a href="form_validation.html">Form Validation</a></li>
                       <li><a href="form_wizards.html">Form Wizard</a></li>
@@ -320,3 +320,15 @@
   </body>
 </html>
 
+
+
+
+    <!-- Bootstrap -->
+
+    <!-- FastClick -->
+
+    <!-- NProgress -->
+
+    <!-- jQuery Smart Wizard -->
+    <script src="{% static '/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js' %}"></script>
+    <!-- Custom Theme Scripts -->
