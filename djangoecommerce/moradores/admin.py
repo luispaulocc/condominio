@@ -4,8 +4,9 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 # Register your models here.
-from .models import Pessoa, Morador, Condominio
+from .models import Pessoa, Apartamento, Condominio
+
 
 admin.site.register(Pessoa)
-admin.site.register(Morador)
 admin.site.register(Condominio)
+admin.site.register(Apartamento)

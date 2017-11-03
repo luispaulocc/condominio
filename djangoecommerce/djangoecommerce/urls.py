@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from coreAdmin.views import index
 from coreAdmin.views import plain
-from moradores.views import moradores
+from moradores.views import moradores, add_morador
 from moradores.views import cadastrar_morador
 from django.contrib.auth.views import login, logout
 
@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^$', login, {'template_name':'login.html'}, name='login'),
     url(r'^$', logout, {'next_page':'login.html'}, name='logout'),
     url(r'^plain_page/$', plain, name='plain'),
-    url(r'^cadastrar_morador/$', cadastrar_morador, name='cadastrar_morador'),
+    url(r'^cadastar_morador$', add_morador, name='cadastrar_morador'),
     url(r'^moradores/$', moradores, name='moradores'),
     url(r'^admin/', admin.site.urls),
 

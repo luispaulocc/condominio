@@ -5,6 +5,19 @@ from django.db import models
 
 # Create your models here.
 
+class Apartamento(models.Model):
+
+	name = models.CharField(max_length=100)
+	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')
+
+	class Meta:
+		verbose_name = 'Apartamento'
+		verbose_name_plural = 'Apartamentos'
+		ordering = ['name']	
+
+	def __str__(self):
+		return self.name
+
 
 class Condominio(models.Model):
 	name = models.CharField('Condominio', max_length=100)
@@ -23,7 +36,9 @@ class Condominio(models.Model):
 class Pessoa(models.Model):
 
 	name = models.CharField('Nome', max_length=100)
-	sobremone = models.CharField('sobrenome', max_length=100)
+	sobrenome = models.CharField('sobrenome', max_length=100)
+	apartamento = models.ForeignKey('moradores.Apartamento', max_length=20)
+	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')
 	created = models.DateTimeField('Criado em', auto_now_add=True)
 	modified = models.DateTimeField('Modificado em', auto_now_add=True)
 
@@ -32,21 +47,5 @@ class Pessoa(models.Model):
 		verbose_name_plural = 'Pessoas'
 		ordering = ['name']
 
-
 	def __str__(self):
 		return self.name
-
-class Morador(models.Model):
-	apartamento = models.CharField('Apartamento', max_length=20)
-	pessoa = models.ForeignKey('moradores.Pessoa', verbose_name='Pessoa')
-	created = models.DateTimeField('Criado em', auto_now_add=True)
-	modified = models.DateTimeField('Modificado em', auto_now_add=True)
-	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')
-
-	class Meta:
-		verbose_name = 'Morador'
-		verbose_name_plural = 'Moradores'
-		ordering = ['apartamento']
-
-	def __str__(self):
-		return self.apartamento
