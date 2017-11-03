@@ -41,7 +41,7 @@ class CadastroMoradoresListView(generic.ListView):
 	model = Pessoa
 	template_name = 'cadastrar_morador.html'
 	context_object_name = 'cadastrar_morador'
-    
+
 
 cadastrar_morador = CadastroMoradoresListView.as_view()
 

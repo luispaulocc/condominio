@@ -10,6 +10,7 @@ class Apartamento(models.Model):
 	name = models.CharField(max_length=100)
 	condominio = models.ForeignKey('moradores.Condominio', verbose_name='Condominio')
 
+
 	class Meta:
 		verbose_name = 'Apartamento'
 		verbose_name_plural = 'Apartamentos'
@@ -21,8 +22,6 @@ class Apartamento(models.Model):
 
 class Condominio(models.Model):
 	name = models.CharField('Condominio', max_length=100)
-
-
 	class Meta:
 		verbose_name = 'Condominio'
 		verbose_name_plural = 'Condominios'
