@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'coreAdmin',
     'moradores',
     'widget_tweaks',
+    'account',
+    'global_permissions'
 
 ]
 

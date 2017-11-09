@@ -1,5 +1,10 @@
+ {% if user.is_authenticated %}
+
+
 <!DOCTYPE html>
 {% load static %}
+
+
 <html lang="pt-br">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -170,11 +175,10 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              {% if user.is_authenticated %}
+
               <a data-toggle="tooltip" data-placement="top" title="Sair" href="{% url 'logout' %}">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
-              {% endif %}
             </div>
             <!-- /menu footer buttons -->
           </div>
@@ -322,3 +326,4 @@
 
 
 
+{% endif %}

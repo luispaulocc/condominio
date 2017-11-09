@@ -8,8 +8,8 @@ from django.views.generic import View, TemplateView
 
 class IndexView(TemplateView):
 	template_name= 'index.html'
-
 index = IndexView.as_view()
+
 
 def login(request):
 	return render(request, 'login.html')

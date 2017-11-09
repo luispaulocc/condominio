@@ -20,13 +20,16 @@ from coreAdmin.views import index
 from coreAdmin.views import plain
 from moradores.views import moradores, add_morador
 from moradores.views import cadastrar_morador
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import login, logout_then_login
+
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import logout_then_login
 
 
 urlpatterns = [
     url(r'^inicio/$', index, name='index'),
-    url(r'^$', login, {'template_name':'login.html'}, name='login'),
-    url(r'^$', logout, {'next_page':'login.html'}, name='logout'),
+    url(r'^$', LoginView.as_view(template_name='login.html'), name="login"),    
+    url(r'^logout/$',logout_then_login, name="logout"),
     url(r'^plain_page/$', plain, name='plain'),
     url(r'^cadastar_morador$', add_morador, name='cadastrar_morador'),
     url(r'^moradores/$', moradores, name='moradores'),

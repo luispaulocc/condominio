@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+
+
 {% block content %}
+{% if  perms.global_permissions.acessar_index %}
+
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -695,10 +699,15 @@
           </div>
         </div>
         <!-- /page content -->
+
+{% endif %}
 {% endblock %}
 
 
 {% block libs%}
+
+{% if  perms.global_permissions.acessar_index %}
+
     <!-- iCheck -->
     <script src="{% static 'vendors/iCheck/icheck.min.js' %}"></script>
     <!-- Skycons -->
@@ -722,4 +731,9 @@
     <!-- bootstrap-daterangepicker -->
     <script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
     <script src="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+
+    {% endif %}
 {% endblock %}
+
+
