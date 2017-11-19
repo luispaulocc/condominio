@@ -9,14 +9,9 @@ from django.shortcuts import render, redirect
 from django import forms
 from django.utils import timezone
 from forms import  CadastroMoradorForm
-
-
 from .models import Condominio, Pessoa, Apartamento
-
-# Create your views here.
-
-
-
+from braces.views import LoginRequiredMixin
+from braces.views import PermissionRequiredMixin
 
 
 def add_morador(request):
@@ -36,21 +31,22 @@ def add_morador(request):
 
 
 
-class CadastroMoradoresListView(generic.ListView):
-
-	model = Pessoa
-	template_name = 'cadastrar_morador.html'
-	context_object_name = 'cadastrar_morador'
-
+class CadastroMoradoresListView(LoginRequiredMixin, generic.ListView):
+    model = Pessoa
+    template_name = 'cadastrar_morador.html'
+    context_object_name = 'cadastrar_morador'
 
 cadastrar_morador = CadastroMoradoresListView.as_view()
 
 
-class MoradoresListView(generic.ListView):
-
-	model = Pessoa
-	template_name = 'moradores.html'
-	context_object_name = 'moradores'
+class MoradoresListView(LoginRequiredMixin, PermissionRequiredMixin, generic.ListView):
+    model = Pessoa
+    template_name = 'moradores.html'
+    context_object_name = 'moradores'
+    permission_required = 'global_permissions.acessar_index'
+    permission_denied_message = 'Permission Denied'
+    raise_exception = True
+    
 
 
 moradores = MoradoresListView.as_view()

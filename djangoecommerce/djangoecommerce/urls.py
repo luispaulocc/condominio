@@ -18,12 +18,16 @@ from django.contrib import admin
 from django.conf import settings
 from coreAdmin.views import index
 from coreAdmin.views import plain
+from coreAdmin.views import page_403
 from moradores.views import moradores, add_morador
 from moradores.views import cadastrar_morador
 from django.contrib.auth.views import login, logout_then_login
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import logout_then_login
+
+handler403 = page_403
+
 
 
 urlpatterns = [
