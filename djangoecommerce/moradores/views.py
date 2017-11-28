@@ -5,7 +5,7 @@ from django.views import generic
 
 from django.shortcuts import render, redirect
 
-
+from django.shortcuts import get_list_or_404, get_object_or_404
 from django import forms
 from django.utils import timezone
 from forms import  CadastroMoradorForm
@@ -50,3 +50,20 @@ class MoradoresListView(LoginRequiredMixin, PermissionRequiredMixin, generic.Lis
 
 
 moradores = MoradoresListView.as_view()
+
+
+
+def morador_edit(request, pk):
+    morador = get_object_or_404(Pessoa, pk=pk)
+    if request.method == "POST":
+        form = CadastroMoradorForm(request.POST, instance=morador)
+        if form.is_valid():
+            morador = form.save(commit=False)
+            morador.timestamp = timezone.now()
+            morador.save()
+            return redirect('moradores')
+    else:
+        form = CadastroMoradorForm(instance=morador)
+    return render(request, 'editar_morador.html', {'form': form})
+
+

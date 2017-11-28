@@ -19,15 +19,17 @@ from django.conf import settings
 from coreAdmin.views import index
 from coreAdmin.views import plain
 from coreAdmin.views import page_403
-from moradores.views import moradores, add_morador
+from moradores.views import moradores, add_morador, morador_edit
 from moradores.views import cadastrar_morador
 from django.contrib.auth.views import login, logout_then_login
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import logout_then_login
+from django.template.response import TemplateResponse 
+
 
 handler403 = page_403
-
+handler404 = page_403
 
 
 urlpatterns = [
@@ -37,6 +39,10 @@ urlpatterns = [
     url(r'^plain_page/$', plain, name='plain'),
     url(r'^cadastar_morador$', add_morador, name='cadastrar_morador'),
     url(r'^moradores/$', moradores, name='moradores'),
+    url(r'^morador/(?P<pk>\d+)/edit$', morador_edit, name='morador_editar'),
     url(r'^admin/', admin.site.urls),
+    url(r'^', TemplateResponse, {'template': 'page_404.html'})
+   
 
 ]
+

@@ -35,7 +35,12 @@
                       <div class="col-md-3 col-sm-3 col-xs-12 profile_details">
                         <div class="well profile_view">
                           <div class="col-sm-12">
-                            <h4 class="brief"><i>{{morador.condominio}}</i></h4>
+                            <h4 class="brief"><i>{{morador.condominio}}</i></h4> 
+
+
+                            <a class="btn btn-default" href="{% url 'morador_editar' pk=morador.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                            
+
                             <div class="left col-xs-7">
                               <h2>{{morador.name}} {{morador.sobrenome}}</h2>
                               
